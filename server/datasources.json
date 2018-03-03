@@ -1,0 +1,48 @@
+{
+  "db": {
+    "name": "db",
+    "localStorage": "",
+    "file": "my_data.json",
+    "connector": "memory"
+  },
+  "mongoproduct": {
+    "host": "localhost",
+    "port": 27017,
+    "url": "",
+    "database": "lb_db",
+    "password": "",
+    "name": "mongoproduct",
+    "user": "",
+    "connector": "mongodb"
+  },
+  "mysqlproduct": {
+    "host": "localhost",
+    "port": 3306,
+    "url": "",
+    "database": "lb_mysql",
+    "password": "",
+    "name": "mysqlproduct",
+    "user": "root",
+    "connector": "mysql"
+  },
+  "local-storage": {
+    "name": "local-storage",
+    "connector": "loopback-component-storage",
+    "provider" : "filesystem",
+    "root" : "./server/local-storage"
+  },
+  "amazonS3":{
+    "provider" : "amazon",
+    "name" : "amazons3",
+    "connector" : "loopback-component-storage",
+    "key" : "your amazon s3 key",
+    "keyId": "your amazons3 key id"
+  },
+  "filestore-mongo": {
+    "host": "localhost",
+    "port": 27017,
+    "database": "lb_db",
+    "provider": "filestore-mongo",
+    "connector": "loopback-component-storage-mongo"
+  }
+}

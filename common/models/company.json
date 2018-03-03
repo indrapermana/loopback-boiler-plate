@@ -1,0 +1,92 @@
+{
+  "name": "company",
+  "plural": "companies",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "telephone": {
+      "type": "string",
+      "required": true
+    },
+    "address": {
+      "type": "string",
+      "required": true
+    },
+    "post_code": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "account": {
+      "type": "hasOne",
+      "model": "account",
+      "foreignKey": "company_id",
+      "options": {
+        "nestRemoting": true,
+        "disableInclude": true
+      }
+    },
+    "products": {
+      "type": "hasMany",
+      "model": "Product",
+      "foreignKey": "",
+      "options": {
+        "nestRemoting": true,
+        "disableInclude": false
+      },
+      "through": "CompanyProduct"
+    }
+  },
+  "acls": [
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$unauthenticated",
+      "permission": "DENY"
+    }
+  ],
+  "methods": {
+    "listCompanies": {
+      "returns": {
+        "arg": "companies",
+        "type": "array"
+      },
+      "http": {
+        "verb": "get"
+      }
+    },
+    "myGreet": {
+      "accepts": [
+        {
+          "arg": "msg",
+          "type": "string",
+          "required": true,
+          "description": "message for greeting"
+        }
+      ],
+      "returns": [
+        {
+          "arg": "greetings",
+          "type": "string",
+          "root": false,
+          "description": "return greeting"
+        }
+      ],
+      "description": "say hai",
+      "http": [
+        {
+          "path": "/my-greet",
+          "verb": "get"
+        }
+      ]
+    }
+  }
+}

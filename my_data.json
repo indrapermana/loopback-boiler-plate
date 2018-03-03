@@ -1,0 +1,12 @@
+{
+  "ids": {
+    "Product": 4
+  },
+  "models": {
+    "Product": {
+      "1": "{\"name\":\"Sling bag\",\"quantity\":10,\"id\":1}",
+      "2": "{\"name\":\"Messanger bag\",\"quantity\":10,\"id\":2}",
+      "3": "{\"name\":\"Camera\",\"quantity\":5,\"id\":3}"
+    }
+  }
+}

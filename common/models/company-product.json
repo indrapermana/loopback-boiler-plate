@@ -1,0 +1,37 @@
+{
+  "name": "CompanyProduct",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {},
+  "validations": [],
+  "relations": {
+    "product": {
+      "type": "belongsTo",
+      "model": "Product",
+      "foreignKey": "",
+      "options": {
+        "disableInclude": false
+      }
+    },
+    "company": {
+      "type": "belongsTo",
+      "model": "company",
+      "foreignKey": "",
+      "options": {
+        "disableInclude": false
+      }
+    }
+  },
+  "acls": [
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$unauthenticated",
+      "permission": "DENY"
+    }
+  ],
+  "methods": {}
+}
